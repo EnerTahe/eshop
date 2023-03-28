@@ -12,6 +12,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.13",
+    "@heroicons/react": "^2.0.16",
     "@ngneat/falso": "^6.4.0",
     "@prisma/client": "^4.12.0",
     "@stripe/stripe-js": "^1.52.0",
@@ -22,10 +24,11 @@
     "currency.js": "^2.0.4",
     "next": "13.2.4",
     "next-connect": "^0.13.0",
-    "react": "18.2.0",
+    "react": "^18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
     "react-intersection-observer": "^9.4.3",
+    "reactstrap": "^9.1.6",
     "stripe": "^11.16.0",
     "typescript": "5.0.2"
   },

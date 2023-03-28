@@ -19,7 +19,6 @@ const SingleProduct = () => {
 
             const respJSON = await fetch(`/api/products/${title}`);
             const resp = await respJSON.json();
-            console.log("ALIV");
             return resp;
         } catch (error) {
             throw error;
