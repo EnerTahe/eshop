@@ -25,6 +25,8 @@ model Product {
   description String
   price       String
   quantity    Int
+  size    String
+  color       String
   image       String
   createdAt   DateTime  @default(now())
   category    Category? @relation(fields: [categoryId], references: [id])

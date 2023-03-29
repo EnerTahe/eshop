@@ -13,6 +13,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.13",
+    "@heroicons/react": "^2.0.16",
     "@ngneat/falso": "^6.4.0",
     "@prisma/client": "^4.12.0",
     "@stripe/stripe-js": "^1.52.0",
@@ -21,6 +23,7 @@
     "@types/react": "18.0.30",
     "@types/react-dom": "18.0.11",
     "currency.js": "^2.0.4",
+    "heroicons": "^2.0.16",
     "next": "13.2.4",
     "next-connect": "^0.13.0",
     "react": "18.2.0",
