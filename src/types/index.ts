@@ -22,6 +22,8 @@ export type TApiSingleCategoryWithProductResp = {
             image: string;
             price: string;
             quantity: number;
+            colors: string;
+            sizes: string;
         }[];
         hasMore: boolean;
     };
@@ -34,6 +36,8 @@ export type TApiSingleProductResp = {
         price: string;
         quantity: number;
         image: string;
+        colors: string;
+        sizes: string;
     };
 };
 

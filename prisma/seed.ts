@@ -26,8 +26,8 @@ const main = async () => {
                     title: `${productAdjective} ${product.title}`,
                     description: product.description,
                     price: product.price,
-                    size: "XL",
-                    color: 'red',
+                    sizes: "XL",
+                    colors: 'red',
                     image: `${product.image}/tech`,
                     quantity: randNumber({ min: 10, max: 100 }),
                     category: {

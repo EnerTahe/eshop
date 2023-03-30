@@ -19,6 +19,8 @@ const getSingleProduct = async (
                 price: true,
                 quantity: true,
                 image: true,
+                colors: true,
+                sizes: true,
             },
         });
         if (!product) {

@@ -22,6 +22,7 @@ const getCategories = async (
                         description: true,
                         image: true,
                         price: true,
+                        colors: true,
                     },
                 },
             },
