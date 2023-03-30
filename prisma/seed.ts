@@ -41,6 +41,7 @@ const main = async () => {
                                     from: new Date("10/06/2020"),
                                     to: new Date(),
                                 }),
+                                categoryImage: `${product.image}/tech`,
                             },
                         },
                     },

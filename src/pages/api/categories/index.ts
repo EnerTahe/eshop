@@ -12,6 +12,7 @@ const getCategories = async (
             select: {
                 id: true,
                 name: true,
+                categoryImage: true,
                 products: {
                     orderBy: {
                         createdAt: "desc",

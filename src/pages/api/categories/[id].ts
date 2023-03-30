@@ -21,6 +21,7 @@ const getSingleCategory = async (
                 select: {
                     id: true,
                     name: true,
+                    categoryImage: true,
                     products: {
                         orderBy: {
                             createdAt: "desc",
@@ -65,6 +66,7 @@ const getSingleCategory = async (
             select: {
                 id: true,
                 name: true,
+                categoryImage: true,
                 products: {
                     orderBy: {
                         createdAt: "desc",
