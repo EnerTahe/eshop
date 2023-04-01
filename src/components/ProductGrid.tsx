@@ -5,39 +5,13 @@ import { AiOutlineRight } from "react-icons/ai";
 import { useInView } from "react-intersection-observer";
 import { TApiAllCategoriesResp } from "../types";
 import { Fragment, useState } from "react";
-import { Dialog, RadioGroup, Transition } from "@headlessui/react";
+import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { StarIcon } from "@heroicons/react/20/solid";
+import { useContext } from "react";
+import { CartContext } from "../components/CartContext";
 
-const product = {
-  name: "Basic Tee 6-Pack ",
-  price: "$192",
-  rating: 3.9,
-  reviewCount: 117,
-  href: "#",
-  imageSrc:
-    "https://tailwindui.com/img/ecommerce-images/product-quick-preview-02-detail.jpg",
-  imageAlt: "Two each of gray, white, and black shirts arranged on table.",
-  colors: [
-    { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
-    { name: "Gray", class: "bg-gray-200", selectedClass: "ring-gray-400" },
-    { name: "Black", class: "bg-gray-900", selectedClass: "ring-gray-900" },
-  ],
-  sizes: [
-    { name: "XXS", inStock: true },
-    { name: "XS", inStock: true },
-    { name: "S", inStock: true },
-    { name: "M", inStock: true },
-    { name: "L", inStock: true },
-    { name: "XL", inStock: true },
-    { name: "XXL", inStock: true },
-    { name: "XXXL", inStock: false },
-  ],
-};
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+
 
 interface IProductGrid extends TApiAllCategoriesResp {
   showLink: boolean;
@@ -50,9 +24,10 @@ const ProductGrid = (props: IProductGrid) => {
   const { ref, inView } = useInView();
 
   const [open, setOpen] = useState(false);
-  const [selectedColor, setSelectedColor] = useState(product.colors[0]);
-  const [selectedSize, setSelectedSize] = useState(product.sizes[2]);
   const [productDetails, setProductDetails] = useState({});
+  const {items, addToCart, removeFromCart} = useContext(CartContext);
+  const [exists, setExists] = useState(false);
+
 
   const getSingleProduct = async (title) => {
     console.log("activated");
@@ -78,10 +53,18 @@ const ProductGrid = (props: IProductGrid) => {
   };
 
   useEffect(() => {
+    const inCart = items.find((item) => item.id === id);
+
+    if (inCart) {
+      setExists(true);
+    } else {
+      setExists(false);
+    }
+
     if (inView) {
       if (loadMoreFun) loadMoreFun();
     }
-  }, [inView, loadMoreFun]);
+  }, [inView, loadMoreFun, items, id]);
 
   return (
     <div className="bg-white">
@@ -159,12 +142,17 @@ const ProductGrid = (props: IProductGrid) => {
                           <form>
                             
 
-                            <button
+                            {/* <button
                               type="submit"
                               className="mt-20 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                             >
                               Add to bag
-                            </button>
+                            </button> */}
+                            {
+     exists
+     ? <button onClick={() => removeFromCart(id)}>Remove from Cart</button>
+     : <button onClick={() => addToCart({id, name, price})}>Add to Cart</button>
+   }
                           </form>
                         </section>
                       </div>

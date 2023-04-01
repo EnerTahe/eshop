@@ -13,7 +13,7 @@ const main = async () => {
         await primsa.category.deleteMany();
         await primsa.product.deleteMany();
         const fakeProducts = randProduct({
-            length: 1000,
+            length: 50,
         });
         for (let index = 0; index < fakeProducts.length; index++) {
             const product = fakeProducts[index];

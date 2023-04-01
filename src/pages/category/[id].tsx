@@ -75,7 +75,7 @@ const SingleCategory = () => {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main className="container mx-auto">
+            <main className="">
                 <Navbar />
                 {isLoading ? (
                     <Skelton />

@@ -5,7 +5,7 @@ import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@her
 
 const config = {
     pages: [
-      { name: 'Categories', href: 'categories' },
+      { name: 'Categories', href: '/categories' },
       { name: 'Soon enough', href: '/' },
     ],
   }
@@ -38,6 +38,7 @@ const config = {
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
   }
+
 
 const Navbar = () => {
     const [open, setOpen] = useState(false)
@@ -220,13 +221,14 @@ const Navbar = () => {
           </div>
         </Dialog>
       </Transition.Root>
+      {/* END OF MOBILE */}
 
       <header className="relative bg-white">
         <p className="flex h-10 items-center justify-center bg-indigo-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
           Get free delivery on orders over $100
         </p>
 
-        <nav aria-label="Top" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <nav aria-label="Top" className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
           <div className="border-b border-gray-200">
             <div className="flex h-16 items-center">
               <button
